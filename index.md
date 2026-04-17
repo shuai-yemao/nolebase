@@ -33,6 +33,3 @@ features:
   - title: 知识管理
     details: Obsidian笔记整理、VitePress博客构建
     icon: 🗃
----
-
-<HomePage />
