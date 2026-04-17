@@ -1,7 +1,9 @@
 @import 'kbd.css';
 
-html, body {
-  -webkit-tap-highlight-color: transparent; /* 避免触屏下的点击高亮颜色 */
+html,
+body {
+  -webkit-tap-highlight-color: transparent;
+  /* 避免触屏下的点击高亮颜色 */
 }
 
 /* 参考 Vitest */
@@ -91,56 +93,58 @@ html, body {
 }
 
 /* 首页标题样式 */
-.VPHomeHero > .container > .main > h1 {
+.VPHomeHero>.container>.main>h1 {
   font-size: 5rem;
   font-family: 'tengwarannatar-bold';
 }
 
 /* 首页子标题样式 */
-.VPHomeHero > .container > .main > .text {
+.VPHomeHero>.container>.main>.text {
   padding-top: 45px;
   font-size: 4rem;
 }
 
 /* 首页介绍样式 */
-.VPHomeHero > .container > .main > .tagline {
+.VPHomeHero>.container>.main>.tagline {
   padding-top: 24px;
 }
 
 /* 自适应样式 */
 @media (max-width: 1024px) {
+
   /* 首页标题样式 */
-  .VPHomeHero > .container > .main > h1 {
+  .VPHomeHero>.container>.main>h1 {
     font-size: 3.5rem;
   }
 
   /* 首页子标题样式 */
-  .VPHomeHero > .container > .main > .text {
+  .VPHomeHero>.container>.main>.text {
     padding-top: 30px;
     font-size: 3rem;
   }
 
   /* 首页介绍样式 */
-  .VPHomeHero > .container > .main > .tagline {
+  .VPHomeHero>.container>.main>.tagline {
     padding-top: 20px;
   }
 }
 
 /* 自适应样式 */
 @media (max-width: 640px) {
+
   /* 首页标题样式 */
-  .VPHomeHero > .container > .main > h1 {
+  .VPHomeHero>.container>.main>h1 {
     font-size: 2.5rem;
   }
 
   /* 首页子标题样式 */
-  .VPHomeHero > .container > .main > .text {
+  .VPHomeHero>.container>.main>.text {
     padding-top: 20px;
     font-size: 2rem;
   }
 
   /* 首页介绍样式 */
-  .VPHomeHero > .container > .main > .tagline {
+  .VPHomeHero>.container>.main>.tagline {
     padding-top: 20px;
   }
 }
@@ -174,7 +178,7 @@ html, body {
 }
 
 /* 脚注 */
-.footnotes > .footnotes-list {
+.footnotes>.footnotes-list {
   margin-top: 32px;
   opacity: 0.9;
   font-size: 12px;
@@ -182,12 +186,12 @@ html, body {
   font-family: sans-serif;
 }
 
-.footnotes > .footnotes-list > .footnote-item > p {
+.footnotes>.footnotes-list>.footnote-item>p {
   line-height: 18px;
 }
 
 /* 覆盖正文的 h1 标题样式 */
-.vp-doc > div > h1 {
+.vp-doc>div>h1 {
   margin-bottom: 16px;
 }
 
@@ -274,4 +278,300 @@ html, body {
 .dark .VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:active {
   color: white;
   background-color: #4b4b4b;
+}
+
+/* Rally风格 - 红色强调线装饰 */
+.VPHero.VPHomeHero .container {
+  position: relative;
+}
+
+.VPHero.VPHomeHero .container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #e25555;
+}
+
+/* 简约留白设计 - 增加hero区域上下padding */
+.VPHero.VPHomeHero {
+  padding: 80px 0 60px 0;
+}
+
+/* Features区域优化 - 更大间距和简约风格 */
+.VPFeatures {
+  padding: 60px 0;
+}
+
+.VPFeatures .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 红色装饰线 - 每个feature标题前 */
+.VPFeature .title {
+  position: relative;
+  padding-left: 16px;
+}
+
+.VPFeature .title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background-color: #e25555;
+}
+
+/* 简约鼠标悬停效果 */
+.VPFeature:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* 暗色模式下的红色强调 */
+.dark .VPFeature .title::before {
+  background-color: #ff6b6b;
+}
+
+.dark .VPFeature:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* 导航栏简约化 - 去除不必要的边框和背景 */
+.VPNav {
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: blur(0);
+}
+
+.VPNav .title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 暗色模式导航栏 */
+.dark .VPNav {
+  background: transparent;
+}
+
+/* 暗色模式滚动后导航栏 */
+.dark .VPNav.scrolled {
+  background: rgba(15, 15, 15, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 滚动后导航栏 */
+.VPNav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+/* 按钮悬停效果增强 */
+.VPHero.VPHomeHero .actions .VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(226, 85, 85, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* 暗色模式按钮悬停效果 */
+.dark .VPHero.VPHomeHero .actions .VPButton:hover {
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* 主页content区域增加留白 */
+.VPHome .VPHomeContent {
+  padding: 40px 24px;
+}
+
+/* 暗色模式footer优化 */
+.dark .VPFooter {
+  background: #0f0f0f;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 亮色模式footer优化 */
+.VPFooter {
+  background: #fafafa;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* 链接悬停下划线动画 */
+.vp-doc a {
+  position: relative;
+}
+
+.vp-doc a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e25555;
+  transition: width 0.3s ease;
+}
+
+.vp-doc a:hover::after {
+  width: 100%;
+}
+
+.dark .vp-doc a::after {
+  background-color: #ff6b6b;
+}
+
+/* 暗色模式hero区域文字颜色优化 */
+.dark .VPHomeHero .tagline {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 亮色模式hero区域文字颜色优化 */
+.VPHomeHero .tagline {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* 页面加载动画 - 渐入效果 */
+.VPHome {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero区域文字动画 */
+.VPHomeHero .container .main {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Features交错动画 */
+.VPFeatures .feature {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.VPFeatures .feature:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.VPFeatures .feature:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.VPFeatures .feature:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.VPFeatures .feature:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 按钮脉冲效果 */
+.VPHero.VPHomeHero .actions .VPButton.brand {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(226, 85, 85, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(226, 85, 85, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(226, 85, 85, 0);
+  }
+}
+
+/* 暗色模式按钮脉冲效果 */
+.dark .VPHero.VPHomeHero .actions .VPButton.brand {
+  animation: pulseDark 2s infinite;
+}
+
+@keyframes pulseDark {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/* 红色装饰线动画 */
+.VPHero.VPHomeHero .container::before {
+  animation: expandLine 1s ease-out backwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+/* Feature图标悬停旋转效果 */
+.VPFeature:hover .icon {
+  transform: rotate(10deg) scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.VPFeature .icon {
+  transition: all 0.3s ease;
+}
+
+/* 暗色模式feature图标悬停效果 */
+.dark .VPFeature:hover .icon {
+  transform: rotate(10deg) scale(1.1);
 }

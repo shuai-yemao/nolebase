@@ -27,17 +27,17 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-sky-1: #3c96ca;
-  --vp-c-sky-2: #49a1d4;
-  --vp-c-sky-3: #49a1d4;
-  --vp-c-sky-soft: rgba(73, 161, 212, 0.84);
+  --vp-c-sky-1: #e25555;
+  --vp-c-sky-2: #e25555;
+  --vp-c-sky-3: #e25555;
+  --vp-c-sky-soft: rgba(226, 85, 85, 0.15);
 }
 
 .dark {
-  --vp-c-sky-1: #49a3d7;
-  --vp-c-sky-2: #58b1e5;
-  --vp-c-sky-3: #58b1e5;
-  --vp-c-sky-soft: #58b1e5;
+  --vp-c-sky-1: #ff6b6b;
+  --vp-c-sky-2: #ff6b6b;
+  --vp-c-sky-3: #ff6b6b;
+  --vp-c-sky-soft: rgba(255, 107, 107, 0.2);
 }
 
 /**
@@ -75,28 +75,24 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #8d6fc7 40%,
-    #4fc4d8
-  );
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #8d73bf90 30%,
-    #d6c0e890
-  );
-  --vp-home-hero-image-filter: blur(30px);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
+      #e25555 40%,
+      #e25555);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg,
+      #e2555510 30%,
+      #e2555510);
+  --vp-home-hero-image-filter: blur(0px);
 }
 
 @media (min-width: 640px) {
   :root {
-    --vp-home-hero-image-filter: blur(56px);
+    --vp-home-hero-image-filter: blur(0px);
   }
 }
 
 @media (min-width: 960px) {
   :root {
-    --vp-home-hero-image-filter: blur(72px);
+    --vp-home-hero-image-filter: blur(0px);
   }
 }
 
