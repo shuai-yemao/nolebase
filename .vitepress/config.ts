@@ -209,7 +209,6 @@ export default defineConfig({
     },
     nav: [
       { text: '主页', link: '/' },
-      { text: '笔记首页', link: '/笔记/' },
       { text: 'MCU笔记', link: '/笔记/嵌入式/开发板/' },
       { text: 'OS笔记', link: '/笔记/嵌入式/操作系统/' },
       { text: '开发工具笔记', link: '/笔记/嵌入式/必备开发工具/' },

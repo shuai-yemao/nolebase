@@ -1,0 +1,16 @@
+# 开发板笔记
+
+## 架构分类
+
+- [ARM架构](./ARM架构/)
+- [RISC-V架构](./RISC-V架构/)
+
+## ARM架构开发板
+
+- [STM32F103C8T6](./ARM架构/STM32F103C8T6/)
+- [STM32F407ZGT6](./ARM架构/STM32F407ZGT6/)
+- [STM32F411CEU6](./ARM架构/STM32F411CEU6/)
+
+## RISC-V架构开发板
+
+- [ESP32-S3](./RISC-V架构/ESP32-S3%20ESP-IDF学习/)
