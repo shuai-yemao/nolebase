@@ -3,353 +3,40 @@
 html,
 body {
   -webkit-tap-highlight-color: transparent;
-  /* 避免触屏下的点击高亮颜色 */
 }
 
-/* 参考 Vitest */
-/* fix height ~ 2 lines of text: 3 or more cards per row */
-.VPTeamMembersItem.small .profile .data .affiliation {
-  min-height: 3rem;
+/* ==================== Rally暗色主题优化 ==================== */
+
+.dark {
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-soft: #141414;
+  --vp-c-bg-mute: #1a1a1a;
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: rgba(255, 255, 255, 0.65);
+  --vp-c-text-3: rgba(255, 255, 255, 0.4);
+  --vp-c-border: rgba(255, 255, 255, 0.08);
+  --vp-c-divider: rgba(255, 255, 255, 0.06);
 }
 
-.VPTeamMembersItem.small .profile .data .desc {
-  min-height: 3rem;
+.dark body {
+  background-color: #0a0a0a;
 }
 
-/* fix height ~ 3 lines of text: 4 cards per row */
-@media (min-width: 1064px) and (max-width: 1143px) {
-  .VPTeamMembersItem.small .profile .data .affiliation {
-    min-height: 4rem;
-  }
+/* ==================== 导航栏Rally风格 ==================== */
 
-  .VPTeamMembersItem.small .profile .data .desc {
-    min-height: 4rem;
-  }
-}
-
-/* fix height ~ 3 lines of text: 3 cards per row */
-@media (min-width: 815px) and (max-width: 875px) {
-  .VPTeamMembersItem.small .profile .data .affiliation {
-    min-height: 4rem;
-  }
-
-  .VPTeamMembersItem.small .profile .data .desc {
-    min-height: 4rem;
-  }
-}
-
-/* fix height ~ 3 lines of text: 2 cards per row */
-@media (max-width: 612px) {
-  .VPTeamMembersItem.small .profile .data .affiliation {
-    min-height: 4rem;
-  }
-
-  .VPTeamMembersItem.small .profile .data .desc {
-    min-height: 4rem;
-  }
-}
-
-/* fix height: one card per row */
-@media (max-width: 568px) {
-  .VPTeamMembersItem.small .profile .data .affiliation {
-    min-height: unset;
-  }
-
-  .VPTeamMembersItem.small .profile .data .desc {
-    min-height: unset;
-  }
-}
-
-/* 覆盖 VPTeamMembers 组件内部处理的子元素包含特定 max-width 样式致使元素宽度与正文不一致的问题 */
-.vp-doc .VPTeamMembers.small.count-2 .container,
-.vp-doc .VPTeamMembers.small.count-3 .container {
-  max-width: 1152px !important;
-}
-
-.VPTeamMembers.medium.count-2 .container {
-  max-width: unset;
-}
-
-.VPTeamMembers.small.count-2 .container {
-  max-width: unset;
-}
-
-/* 标题所需要的字体 */
-@font-face {
-  font-family: tengwarannatar;
-  src: url(/tengwar-annatar-glaemscrafu.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-
-/* 标题所需要的字体 */
-@font-face {
-  font-family: tengwarannatar-bold;
-  src: url(/tengwar-annatar-glaemscrafu-bold.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-
-/* 首页标题样式 */
-.VPHomeHero>.container>.main>h1 {
-  font-size: 5rem;
-  font-family: 'tengwarannatar-bold';
-}
-
-/* 首页子标题样式 */
-.VPHomeHero>.container>.main>.text {
-  padding-top: 45px;
-  font-size: 4rem;
-}
-
-/* 首页介绍样式 */
-.VPHomeHero>.container>.main>.tagline {
-  padding-top: 24px;
-}
-
-/* 自适应样式 */
-@media (max-width: 1024px) {
-
-  /* 首页标题样式 */
-  .VPHomeHero>.container>.main>h1 {
-    font-size: 3.5rem;
-  }
-
-  /* 首页子标题样式 */
-  .VPHomeHero>.container>.main>.text {
-    padding-top: 30px;
-    font-size: 3rem;
-  }
-
-  /* 首页介绍样式 */
-  .VPHomeHero>.container>.main>.tagline {
-    padding-top: 20px;
-  }
-}
-
-/* 自适应样式 */
-@media (max-width: 640px) {
-
-  /* 首页标题样式 */
-  .VPHomeHero>.container>.main>h1 {
-    font-size: 2.5rem;
-  }
-
-  /* 首页子标题样式 */
-  .VPHomeHero>.container>.main>.text {
-    padding-top: 20px;
-    font-size: 2rem;
-  }
-
-  /* 首页介绍样式 */
-  .VPHomeHero>.container>.main>.tagline {
-    padding-top: 20px;
-  }
-}
-
-/* 主页下方的页脚透明度 */
-.VPFooter {
-  opacity: 0.8;
-}
-
-/* 正文结尾的 CC 协议链接基本样式 */
-.footer-cc-link {
-  color: var(--vp-c-text-2);
-  transition: all 0.3s ease;
-  text-decoration: underline;
-  text-decoration-color: rgb(114, 114, 114);
-}
-
-/* 正文结尾的 CC 协议链接鼠标 hover 样式 */
-.footer-cc-link:hover {
-  color: var(--vp-c-text-1);
-}
-
-/* 正文结尾的 CC 协议链接暗色模式下鼠标 hover 样式 */
-.dark .footer-cc-link:hover {
-  color: var(--vp-c-text-1);
-}
-
-/* 调整文档页面页脚到正文结尾的间隔距离 */
-.VPDoc .VPDocFooter {
-  margin-top: 32px;
-}
-
-/* 脚注 */
-.footnotes>.footnotes-list {
-  margin-top: 32px;
-  opacity: 0.9;
-  font-size: 12px;
-  /* 确保脚注上的返回链接符号 ↩ 不会被 body 的 Emoji 字体覆盖渲染为 ↩️ */
-  font-family: sans-serif;
-}
-
-.footnotes>.footnotes-list>.footnote-item>p {
-  line-height: 18px;
-}
-
-/* 覆盖正文的 h1 标题样式 */
-.vp-doc>div>h1 {
-  margin-bottom: 16px;
-}
-
-.vp-doc a {
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.vp-doc a:hover {
-  text-decoration: underline;
-}
-
-/**
-  Discord 链接按钮样式
-*/
-
-.VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"] {
-  color: white;
-  background-color: #404eed;
-}
-
-.VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:hover {
-  color: white;
-  background-color: #6975f2;
-}
-
-.VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:active {
-  color: white;
-  background-color: #404eed;
-}
-
-/**
-  暗色模式下 Discord 链接按钮样式
-*/
-
-.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"] {
-  color: white;
-  background-color: #444c9e;
-}
-
-.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:hover {
-  color: white;
-  background-color: #404eed;
-}
-
-.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:active {
-  color: white;
-  background-color: #444c9e;
-}
-
-/**
-  GitHub 链接按钮样式
-*/
-
-.VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"] {
-  color: white;
-  background-color: #000;
-}
-
-.VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:hover {
-  color: white;
-  background-color: #4b4b4b;
-}
-
-.VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:active {
-  color: white;
-  background-color: #000;
-}
-
-/**
-  暗色模式下 GitHub 链接按钮样式
-*/
-
-.dark .VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"] {
-  color: white;
-  background-color: #4b4b4b;
-}
-
-.dark .VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:hover {
-  color: white;
-  background-color: #252525;
-}
-
-.dark .VPHero.VPHomeHero .actions a[href="https://github.com/nolebase/integrations"]:active {
-  color: white;
-  background-color: #4b4b4b;
-}
-
-/* Rally风格 - 红色强调线装饰 */
-.VPHero.VPHomeHero .container {
-  position: relative;
-}
-
-.VPHero.VPHomeHero .container::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: #e25555;
-}
-
-/* 简约留白设计 - 增加hero区域上下padding */
-.VPHero.VPHomeHero {
-  padding: 80px 0 60px 0;
-}
-
-/* Features区域优化 - 更大间距和简约风格 */
-.VPFeatures {
-  padding: 60px 0;
-}
-
-.VPFeatures .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* 红色装饰线 - 每个feature标题前 */
-.VPFeature .title {
-  position: relative;
-  padding-left: 16px;
-}
-
-.VPFeature .title::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3px;
-  height: 20px;
-  background-color: #e25555;
-}
-
-/* 简约鼠标悬停效果 */
-.VPFeature:hover {
-  transform: translateY(-4px);
-  transition: all 0.3s ease;
-}
-
-/* 暗色模式下的红色强调 */
-.dark .VPFeature .title::before {
-  background-color: #ff6b6b;
-}
-
-.dark .VPFeature:hover {
-  transform: translateY(-4px);
-  transition: all 0.3s ease;
-}
-
-/* 导航栏简约化 - 去除不必要的边框和背景 */
-.VPNav {
+.dark .VPNav {
   background: transparent;
   border-bottom: none;
-  backdrop-filter: blur(0);
+}
+
+.dark .VPNav.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.VPNav {
+  transition: all 0.3s ease;
 }
 
 .VPNav .title {
@@ -357,221 +44,464 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* 暗色模式导航栏 */
-.dark .VPNav {
-  background: transparent;
+/* 导航链接Rally风格 */
+.dark .VPNavBarMenu .VPNavBarMenuLink:hover {
+  color: #e25555;
 }
 
-/* 暗色模式滚动后导航栏 */
-.dark .VPNav.scrolled {
-  background: rgba(15, 15, 15, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.dark .VPNavBarMenu .VPNavBarMenuLink {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease;
 }
 
-/* 滚动后导航栏 */
-.VPNav.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
+/* ==================== Hero区域Rally风格 ==================== */
+
+.VPHero.VPHomeHero {
+  padding: 100px 24px 80px;
+  text-align: center;
 }
 
-/* 按钮悬停效果增强 */
-.VPHero.VPHomeHero .actions .VPButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(226, 85, 85, 0.3);
+.VPHero.VPHomeHero .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.VPHero.VPHomeHero .name {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(120deg, #e25555 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.VPHero.VPHomeHero .text {
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 16px;
+}
+
+.dark .VPHomeHero .tagline {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  margin-top: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Rally风格红色装饰线 */
+.VPHero.VPHomeHero .container::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e25555, #ff6b6b);
+  animation: expandLine 1.2s ease-out forwards;
+}
+
+@keyframes expandLine {
+  to {
+    width: 80px;
+  }
+}
+
+/* 按钮Rally风格 */
+.VPHero.VPHomeHero .actions .VPButton {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
   transition: all 0.3s ease;
+  min-width: 160px;
 }
 
-/* 暗色模式按钮悬停效果 */
-.dark .VPHero.VPHomeHero .actions .VPButton:hover {
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+.VPHero.VPHomeHero .actions .VPButton.brand {
+  background: linear-gradient(135deg, #e25555 0%, #ff6b6b 100%);
+  border: none;
+  color: #fff;
 }
 
-/* 主页content区域增加留白 */
-.VPHome .VPHomeContent {
+.VPHero.VPHomeHero .actions .VPButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(226, 85, 85, 0.35);
+}
+
+.dark .VPHero.VPHomeHero .actions .VPButton.alt {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .VPHero.VPHomeHero .actions .VPButton.alt:hover {
+  border-color: #e25555;
+  color: #e25555;
+}
+
+/* ==================== Features区域Rally风格 ==================== */
+
+.VPFeatures {
+  padding: 80px 24px;
+}
+
+.VPFeatures .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.VPFeature {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .VPFeature {
+  background: #141414;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px);
+  border-color: #e25555;
+  box-shadow: 0 16px 40px rgba(226, 85, 85, 0.15);
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 16px 40px rgba(226, 85, 85, 0.25);
+}
+
+.VPFeature .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 12px;
+}
+
+.VPFeature .details {
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ==================== 页面内容区域 ==================== */
+
+.VPHomeContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.VPHomeContent h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 48px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.VPHomeContent h2::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #e25555, #ff6b6b);
+  border-radius: 2px;
+}
+
+/* ==================== Rally卡片组件 ==================== */
+
+.rally-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin: 60px 0;
+  padding: 0;
+}
+
+.rally-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  padding: 36px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .rally-card {
+  background: #141414;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.rally-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e25555, #ff6b6b);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rally-card:hover::before {
+  opacity: 1;
+}
+
+.rally-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(226, 85, 85, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.dark .rally-card:hover {
+  box-shadow: 0 20px 50px rgba(226, 85, 85, 0.15);
+}
+
+.rally-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--vp-c-text-1);
+}
+
+.rally-card p {
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
+
+.rally-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e25555;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.rally-link:hover {
+  gap: 12px;
+}
+
+.rally-link::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.rally-link:hover::after {
+  transform: translateX(4px);
+}
+
+.dark .rally-link {
+  color: #ff6b6b;
+}
+
+/* ==================== 技术栈Rally风格 ==================== */
+
+.rally-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 80px 0;
+  padding: 0;
+}
+
+.rally-tech-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.dark .rally-tech-item {
+  background: #141414;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.rally-tech-item:hover {
+  transform: translateY(-4px);
+  border-color: #e25555;
+  box-shadow: 0 8px 20px rgba(226, 85, 85, 0.15);
+}
+
+.rally-tech-icon {
+  font-size: 1.3rem;
+}
+
+.rally-tech-name {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+}
+
+/* ==================== 暗色模式Footer ==================== */
+
+.dark .VPFooter {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 40px 24px;
 }
 
-/* 暗色模式footer优化 */
-.dark .VPFooter {
-  background: #0f0f0f;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.VPFooter .message,
+.VPFooter .copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
 }
 
-/* 亮色模式footer优化 */
-.VPFooter {
-  background: #fafafa;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-/* 链接悬停下划线动画 */
-.vp-doc a {
-  position: relative;
-}
-
-.vp-doc a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #e25555;
-  transition: width 0.3s ease;
-}
-
-.vp-doc a:hover::after {
-  width: 100%;
-}
-
-.dark .vp-doc a::after {
-  background-color: #ff6b6b;
-}
-
-/* 暗色模式hero区域文字颜色优化 */
-.dark .VPHomeHero .tagline {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* 亮色模式hero区域文字颜色优化 */
-.VPHomeHero .tagline {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-/* 页面加载动画 - 渐入效果 */
-.VPHome {
-  animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hero区域文字动画 */
-.VPHomeHero .container .main {
-  animation: slideUp 0.8s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Features交错动画 */
-.VPFeatures .feature {
-  animation: fadeInUp 0.6s ease-out backwards;
-}
-
-.VPFeatures .feature:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.VPFeatures .feature:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.VPFeatures .feature:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.VPFeatures .feature:nth-child(4) {
-  animation-delay: 0.4s;
-}
+/* ==================== 动画效果 ==================== */
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* 按钮脉冲效果 */
-.VPHero.VPHomeHero .actions .VPButton.brand {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(226, 85, 85, 0.4);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(226, 85, 85, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(226, 85, 85, 0);
-  }
-}
-
-/* 暗色模式按钮脉冲效果 */
-.dark .VPHero.VPHomeHero .actions .VPButton.brand {
-  animation: pulseDark 2s infinite;
-}
-
-@keyframes pulseDark {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
-  }
-}
-
-/* 红色装饰线动画 */
-.VPHero.VPHomeHero .container::before {
-  animation: expandLine 1s ease-out backwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes expandLine {
+@keyframes slideIn {
   from {
-    width: 0;
     opacity: 0;
+    transform: translateX(-20px);
   }
-
   to {
-    width: 60px;
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* Feature图标悬停旋转效果 */
-.VPFeature:hover .icon {
-  transform: rotate(10deg) scale(1.1);
-  transition: all 0.3s ease;
+.VPHome {
+  animation: fadeIn 0.8s ease-out;
 }
 
-.VPFeature .icon {
-  transition: all 0.3s ease;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* 暗色模式feature图标悬停效果 */
-.dark .VPFeature:hover .icon {
-  transform: rotate(10deg) scale(1.1);
+.VPHero.VPHomeHero .container .main {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.VPFeatures .feature {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.VPFeatures .feature:nth-child(1) { animation-delay: 0.1s; }
+.VPFeatures .feature:nth-child(2) { animation-delay: 0.2s; }
+.VPFeatures .feature:nth-child(3) { animation-delay: 0.3s; }
+.VPFeatures .feature:nth-child(4) { animation-delay: 0.4s; }
+
+.rally-card {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.rally-card:nth-child(1) { animation-delay: 0.15s; }
+.rally-card:nth-child(2) { animation-delay: 0.25s; }
+.rally-card:nth-child(3) { animation-delay: 0.35s; }
+
+.rally-tech-item {
+  animation: slideIn 0.4s ease-out backwards;
+}
+
+.rally-tech-item:nth-child(1) { animation-delay: 0.1s; }
+.rally-tech-item:nth-child(2) { animation-delay: 0.15s; }
+.rally-tech-item:nth-child(3) { animation-delay: 0.2s; }
+.rally-tech-item:nth-child(4) { animation-delay: 0.25s; }
+.rally-tech-item:nth-child(5) { animation-delay: 0.3s; }
+.rally-tech-item:nth-child(6) { animation-delay: 0.35s; }
+
+/* ==================== 响应式设计 ==================== */
+
+@media (max-width: 768px) {
+  .VPHero.VPHomeHero .name {
+    font-size: 2.8rem;
+  }
+
+  .VPHero.VPHomeHero .text {
+    font-size: 2rem;
+  }
+
+  .VPFeatures {
+    padding: 60px 16px;
+  }
+
+  .rally-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rally-card {
+    padding: 28px;
+  }
+
+  .VPHomeContent {
+    padding: 40px 16px 80px;
+  }
+
+  .VPHomeContent h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==================== 滚动条Rally风格 ==================== */
+
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #e25555;
+}
+
+/* ==================== 链接样式 ==================== */
+
+.vp-doc a {
+  color: #e25555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.vp-doc a:hover {
+  color: #ff6b6b;
+}
+
+.dark .vp-doc a {
+  color: #ff6b6b;
+}
+
+.dark .vp-doc a:hover {
+  color: #e25555;
 }

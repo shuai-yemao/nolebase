@@ -33,4 +33,54 @@ features:
   - title: 开发工具
     details: Git版本控制、VS Code配置、代码分析工具Understand
     icon: 🔧
+
 ---
+
+## 技术文章
+
+<div class="rally-cards">
+  <div class="rally-card">
+    <h3>STM32F103C8T6开发指南</h3>
+    <p>详细介绍STM32F103C8T6的外设驱动开发，包括GPIO、定时器、串口等</p>
+    <a href="/笔记/嵌入式/开发板/ARM架构/STM32F103C8T6/" class="rally-link">阅读更多 →</a>
+  </div>
+  <div class="rally-card">
+    <h3>FreeRTOS任务管理</h3>
+    <p>深入理解FreeRTOS的任务创建、调度和通信机制，掌握实时系统开发</p>
+    <a href="/笔记/嵌入式/操作系统/FreeRTOS/" class="rally-link">阅读更多 →</a>
+  </div>
+  <div class="rally-card">
+    <h3>ESP32-S3开发实战</h3>
+    <p>ESP32-S3的WiFi/蓝牙开发、传感器接入和物联网应用案例</p>
+    <a href="/笔记/嵌入式/开发板/RISC-V架构/ESP32-S3%20ESP-IDF学习/" class="rally-link">阅读更多 →</a>
+  </div>
+</div>
+
+## 技术栈
+
+<div class="rally-tech-stack">
+  <div class="rally-tech-item">
+    <span class="rally-tech-icon">🔧</span>
+    <span class="rally-tech-name">STM32</span>
+  </div>
+  <div class="rally-tech-item">
+    <span class="rally-tech-icon">📱</span>
+    <span class="rally-tech-name">ESP32</span>
+  </div>
+  <div class="rally-tech-item">
+    <span class="rally-tech-icon">⚡</span>
+    <span class="rally-tech-name">FreeRTOS</span>
+  </div>
+  <div class="rally-tech-item">
+    <span class="rally-tech-icon">💻</span>
+    <span class="rally-tech-name">C/C++</span>
+  </div>
+  <div class="rally-tech-item">
+    <span class="rally-tech-icon">🐍</span>
+    <span class="rally-tech-name">Python</span>
+  </div>
+  <div class="rally-tech-item">
+    <span class="rally-tech-icon">📡</span>
+    <span class="rally-tech-name">IoT</span>
+  </div>
+</div>
