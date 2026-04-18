@@ -8,9 +8,9 @@ const list = computed(() => {
   const list: ArticleTree[] = ([] as any).concat(...sidebar.map(series => [...series?.items.map(item => ({ ...item, category: series.text }))]))
   for (let i = 0; i < list.length; i++) {
     const items = list[i].items
-    if (items)
-
+    if (items) {
       list.push(...items.map(item => ({ ...item, category: list[i].category })))
+    }
   }
   return list.filter(item => item.link)
 })
